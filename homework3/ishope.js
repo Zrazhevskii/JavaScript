@@ -104,6 +104,7 @@ class Good {
   fourth.setAvailable(false);
   
   const catalog = new GoodsList(/\S/i, true, false);
+//   const catalog2 = new GoodsList(/футболка/i, true, false);
   
   
   catalog.add(first);
@@ -112,8 +113,16 @@ class Good {
   catalog.add(fourth);
   catalog.add(fifth);
   catalog.add(six)
+
+//   catalog2.add(first);
+//   catalog2.add(second);
+//   catalog2.add(third);
+//   catalog2.add(fourth);
+//   catalog2.add(fifth);
+//   catalog2.add(six)
   
   // console.log(catalog.list)
+  // console2.log(catalog.list)
   
   // catalog.sortPrice = true;
   // catalog.sortDir = true;
