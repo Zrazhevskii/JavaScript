@@ -37,7 +37,11 @@ class Good {
     }
   
     remove(id) {
-        this.#goods.filter(good => good.id === id ? this.#goods.splice(id - 1, 1) : good);
+        const delGood = this.#goods.findIndex(good => good.id === id);
+      if (delGood != undefined) {
+        this.#goods.splice(delGood, 1)
+      }
+      return delGood
     }
   }
   
@@ -88,7 +92,8 @@ class Good {
     }
   
     removeUnavailable(status) {
-        this.goods.filter((item, i) => item.available === status ? basket.goods.splice(i, 1) : item);
+        const avail = this.goods.filter((item, i) => item.available === status ? basket.goods.splice(i, 1) : item);
+        return avail
     }
   
   }
@@ -135,7 +140,7 @@ class Good {
   
   
   catalog.remove(3);
-  // console.log('Вы удалили товар. Оставшиеся товары:', catalog.list);
+//   console.log('Вы удалили товар. Оставшиеся товары:', catalog.list);
   
   const basket = new Basket();
   
@@ -162,4 +167,4 @@ class Good {
   
   basket.clear();
   
-  console.log(basket.goods)
+//   console.log(basket.goods)
