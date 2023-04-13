@@ -92,8 +92,8 @@ class Good {
     }
   
     removeUnavailable(status) {
-        const avail = this.goods.filter((item, i) => item.available === status ? basket.goods.splice(i, 1) : item);
-        return avail
+        this.goods = this.goods.filter(item => item.available != status);
+        return this.goods
     }
   
   }
@@ -163,7 +163,7 @@ class Good {
   
   basket.removeUnavailable(false);
   
-  console.log(basket.goods)
+//   console.log(basket.goods)
   
   basket.clear();
   
